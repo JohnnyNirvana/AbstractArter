@@ -975,6 +975,8 @@ class AbstractArtGenerator(QMainWindow):
                 if self.alpha_checkbox.isChecked():
                     min_alpha = self.min_alpha_slider.value()
                     max_alpha = self.max_alpha_slider.value()
+                    if min_alpha > max_alpha:
+                        min_alpha, max_alpha = max_alpha, min_alpha
                     alpha = random.randint(min_alpha, max_alpha)
                     color.setAlpha(alpha)
                 else:
